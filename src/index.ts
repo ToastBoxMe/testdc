@@ -18,11 +18,11 @@ const token = process.env.DISCORD_TOKEN; // Token from Railway Env Variable.
 const client_id = process.env.CLIENT_ID;
 const webhook_id = process.env.WEBHOOK_ID;
 const webhook_token = process.env.WEBHOOK_TOKEN;
-/*
+
 import testCommand from "./slashCommands/ping";
 import helloCommand from "./slashCommands/hello";
 import createCommand from "./slashCommands/create";
-*/
+
 console.log('DISCORD TOKEN ' + token);
 console.log('CLIENT_ID ' + client_id);
 console.log('WEBHOOK_ID ' + webhook_id);
@@ -54,7 +54,7 @@ webhookClient.send({
 	//avatarURL: 'https://i.imgur.com/AfFp7pu.png',
 	embeds: [embed]
 });
-/*
+
 const slashCommands = new Collection<string, SlashCommand>()
 
 slashCommands.set(helloCommand.command.name, helloCommand)
@@ -71,7 +71,7 @@ rest.put(Routes.applicationCommands(client_id), {
 }).catch(e => {
     console.log(e)
 });
-*/
+
 client.on(Events.InteractionCreate, async interaction => {
     if (!interaction.isChatInputCommand()) return;
     const command = slashCommands.get(interaction.commandName);
